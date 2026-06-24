@@ -1,8 +1,10 @@
-const { Pool } = require('pg');
-require('dotenv').config();
 
-// Pool de conexiones a PostgreSQL
-// Usa DATABASE_URL si está disponible (Railway), sino construye desde variables individuales
+const { Pool } = require('pg');
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const pool = new Pool(
   process.env.DATABASE_URL
     ? {
@@ -18,7 +20,6 @@ const pool = new Pool(
       }
 );
 
-// Verificar conexión al iniciar
 pool.connect((err, client, release) => {
   if (err) {
     console.error('❌ Error conectando a PostgreSQL:', err.message);
