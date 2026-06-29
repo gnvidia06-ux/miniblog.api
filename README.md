@@ -27,8 +27,8 @@ MiniBlog API es el backend del servicio de contenidos de DevSpark. Permite crear
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/gnvidia06-ux/miniblog-api.git
-cd miniblog-api
+git clone https://github.com/gnvidia06-ux/miniblog.api.git
+cd miniblog.api
 ```
 
 ### 2. Instalar dependencias
